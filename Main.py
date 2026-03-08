@@ -2,6 +2,7 @@
 #Created by HyperHusky and RandomMop
 
 import time
+import keyboard
 
 actions = []
 
@@ -25,8 +26,16 @@ def into() :
     else :
         print("try angain stupid")
         into()
+def pause() :
+    print('Press "spacebar" to continue')
+    while not(keyboard.is_pressed('space')) :
+        pass
+    time.sleep(0.5)
 
 print("You find youself in some strange facility. What do?")
-time.sleep(1)
+pause()
+
+    
+
 
 into()
