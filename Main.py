@@ -30,7 +30,6 @@ def pause() :
     print('Press "spacebar" to continue')
     while not(keyboard.is_pressed('space')) :
         pass
-    time.sleep(0.5)
 
 print("You find youself in some strange facility. What do?")
 pause()
