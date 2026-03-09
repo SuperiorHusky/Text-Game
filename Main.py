@@ -3,8 +3,11 @@
 
 import time
 import keyboard
+from colorama import Fore, Back, Style
+import random
 
 actions = []
+randomKey = ['z', 'x', 'c', 'v']
 
 def choice() :
     return input(f"{actions}: ")
@@ -24,18 +27,29 @@ def into() :
     elif i == "inventory" :
         print("your pockets are empty")
     else :
-        print("try angain stupid")
+        print(Fore.RED + Style.BRIGHT + "try angain stupid" + Fore.WHITE + Style.NORMAL)
         into()
 def pause() :
     print('Press "spacebar" to continue')
-    while not(keyboard.is_pressed('space')) :
-        pass
-    time.sleep(0.5)
+    keyboard.wait('space')
+
+def quickTime(string, ms) :
+    n = 0
+    r = random.randint(0,3)
+    print(string)
+    print(Fore.RED + Style.BRIGHT + f"PRESS {randomKey[r]}!!!" + Fore.WHITE + Style.NORMAL)
+    while not(keyboard.is_pressed(f'{randomKey[r]}')) and n < ms :
+        time.sleep(0.001)
+        n += 1
+
+    if n >= ms :
+        print("You failed the qte")
+    else :
+        print("You succeded the qte")
 
 print("You find youself in some strange facility. What do?")
 pause()
 
     
-
-
 into()
+quickTime("Quick!", 2000)
