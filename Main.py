@@ -31,6 +31,7 @@ def into() :
         into()
 def pause() :
     print('Press "spacebar" to continue')
+<<<<<<< HEAD
     keyboard.wait('space')
 
 def quickTime(string, ms) :
@@ -46,10 +47,20 @@ def quickTime(string, ms) :
         print("You failed the qte")
     else :
         print("You succeded the qte")
+=======
+    while not(keyboard.is_pressed('space')) :
+        pass
+>>>>>>> 80a50915e258cb7c6fb9be6aca268c81b1724e89
 
 print("You find youself in some strange facility. What do?")
 pause()
 
     
+<<<<<<< HEAD
 into()
 quickTime("Quick!", 2000)
+=======
+
+
+into()
+>>>>>>> 80a50915e258cb7c6fb9be6aca268c81b1724e89
